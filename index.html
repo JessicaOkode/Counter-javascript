@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Counter with javaScript</title>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="nav-line">
+            <h1>COUNTER</h1>
+            <!-- input tag - make readonly so user can't change input -->
+            <!-- default value of input is 0 -->
+            <!-- change state of input on button click -->
+            
+            <input type="text" id="number" value="0">
+            <div class="buttons">
+                <button type="button" id="btn1" class="btn1">LOWER COUNT</button>
+                <button type="button" id="btn2" class="btn2">ADD COUNT</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        document.getElementById("btn2").addEventListener("click", increase);
+        document.getElementById("btn1").addEventListener("click", decrease);
+        function increase() {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+             value++;
+                document.getElementById('number').value = value;
+        }
+        function decrease(){
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+             value--;
+                document.getElementById('number').value = value;
+        }
+    </script>
+
+    <!--javaScript file-->
+    <!-- <script src="js files/second.js"></script> -->
+</body>
+
+</html>
